@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BenderfraiPage {
@@ -32,20 +33,20 @@ public class BenderfraiPage {
     }
 
     public BenderfraiPage hoverSobakamMenu() {
-        sobakamMenu.hover();
+        sobakamMenu.shouldBe(visible).hover();
         return this;
     }
 
     public BenderfraiPage hoverProcheeMenu() {
         $("body").click();
         sleep(300);
-        procheeMenu.hover();
+        procheeMenu.shouldBe(visible).hover();
         sleep(500);
         return this;
     }
 
     public BenderfraiPage hoverInfoMenu() {
-        infoMenu.hover();
+        infoMenu.shouldBe(visible).hover();
         return this;
     }
 
