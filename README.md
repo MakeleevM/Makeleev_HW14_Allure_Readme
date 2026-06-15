@@ -27,18 +27,11 @@
 <img width="5%" title="Jira" src="media/logo/Jira.svg">
 </p>
 
-Тесты написаны на **Java** с использованием фреймворка [Selenide](https://selenide.org/).
-
-Сборщик проекта — **Gradle**.
-
-В качестве фреймворка модульного тестирования используется **JUnit 5**.
-
-Для запуска браузеров применяется [Selenoid](https://aerokube.com/selenoid/).
-
-Удалённый запуск реализован через **Jenkins** с формированием **Allure-отчёта**.
-
-Результаты прогона отправляются в **Telegram** через бота.
-
+Тесты написаны на **Java** с использованием [Selenide](https://selenide.org/).  
+Сборщик — **Gradle**, фреймворк модульного тестирования — **JUnit 5**.  
+Браузеры запускаются через [Selenoid](https://aerokube.com/selenoid/).  
+Удалённый запуск — **Jenkins**, отчёты — **Allure Report**.  
+Результаты приходят в **Telegram** через бота.  
 Настроена интеграция с **Allure TestOps** и **Jira**.
 
 Содержание Allure-отчета:
