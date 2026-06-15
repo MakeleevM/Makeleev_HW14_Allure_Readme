@@ -21,16 +21,13 @@ public class BaseTest {
         }
     @BeforeAll
     static void setupSelenideConfig() {
-//        Configuration.browser = "chrome";
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.baseUrl = "https://benderfrai.ru";
-        Configuration.timeout = 15000;          // 15 секунд на поиск элементов
-        Configuration.pageLoadTimeout = 60000;  // 60 секунд на загрузку страницы
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
         Configuration.headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://qa-guru.github.io");
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://benderfrai.ru");
+        Configuration.timeout = 15000;
+        Configuration.pageLoadTimeout = 60000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

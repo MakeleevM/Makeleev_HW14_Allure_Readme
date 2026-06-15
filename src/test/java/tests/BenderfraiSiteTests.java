@@ -1,108 +1,115 @@
 package tests;
 
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.BenderfraiPage;
+import testdata.TestData;
 
-import static com.codeborne.selenide.CollectionCondition.*;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
+@Story("Сайт Benderfrai")
 public class BenderfraiSiteTests extends BaseTest {
+
+    BenderfraiPage benderfraiPage = new BenderfraiPage();
 
     @Test
     @DisplayName("Проверка выпадающего списка СОБАКАМ")
     void shouldCheckDropdownMenu() {
-        open("");
+        step("Открыть главную страницу", () ->
+                benderfraiPage.openPage()
+        );
 
-        $("[data-menu-submenu-hook='link_sub1_109881485']").hover();
+        step("Навести на меню СОБАКАМ", () ->
+                benderfraiPage.hoverSobakamMenu()
+        );
 
-        $$(".t-menusub__menu_show .t-menusub__list-item").shouldHave(size(8));
+        step("Проверить количество пунктов", () ->
+                benderfraiPage.checkDropdownSize(TestData.SOBAKAM_SIZE)
+        );
 
-        $$(".t-menusub__menu_show .t-menusub__link-item").shouldHave(texts(
-                "ОШЕЙНИКИ",
-                "ШЛЕЙКИ",
-                "ПОВОДКИ",
-                "ПЕРЕСТЁЖКА-ТРАНСФОРМЕР",
-                "ПЕРЕСТЁЖКИ СТАНДАРТНЫЕ",
-                "АДРЕСНИКИ, ШНУРКИ",
-                "БАНДАНЫ",
-                "СОБАКАМ ДО 7 КГ"
-        ));
+        step("Проверить названия пунктов", () ->
+                benderfraiPage.checkDropdownTexts(TestData.SOBAKAM_ITEMS)
+        );
     }
 
     @Test
     @DisplayName("Проверка выпадающего списка ПРОЧЕЕ")
     void shouldCheckProcheeDropdownMenu() {
-        open("");
+        step("Открыть главную страницу", () ->
+                benderfraiPage.openPage()
+        );
 
-        // Закрыть другие меню кликом в пустое место
-        $("body").click();
-        sleep(300);
+        step("Навести на меню ПРОЧЕЕ", () ->
+                benderfraiPage.hoverProcheeMenu()
+        );
 
-        // Навести на "ПРОЧЕЕ"
-        $("[data-menu-submenu-hook='link_sub3_109881485']").hover();
-        sleep(500);
+        step("Проверить количество пунктов", () ->
+                benderfraiPage.checkDropdownSize(TestData.PROCHEE_SIZE)
+        );
 
-        // Проверить
-        $$(".t-menusub__menu_show .t-menusub__list-item").shouldHave(size(5));
-
-        $$(".t-menusub__menu_show .t-menusub__link-item").shouldHave(texts(
-                "ПОДАРОЧНАЯ КАРТА",
-                "ДЛЯ ЛЮДЕЙ",
-                "ИГРУШКИ",
-                "ЛАКОМСТВА",
-                "ВСЕ КОЛЛЕКЦИИ"
-        ));
+        step("Проверить названия пунктов", () ->
+                benderfraiPage.checkDropdownTexts(TestData.PROCHEE_ITEMS)
+        );
     }
 
     @Test
     @DisplayName("Проверка выпадающего списка Информация")
     void shouldCheckInfoDropdownMenu() {
-        open("");
+        step("Открыть главную страницу", () ->
+                benderfraiPage.openPage()
+        );
 
-        $("[data-menu-submenu-hook='link_sub5_109881485']").hover();
+        step("Навести на меню Информация", () ->
+                benderfraiPage.hoverInfoMenu()
+        );
 
-        $$(".t-menusub__menu_show .t-menusub__list-item").shouldHave(size(8));
+        step("Проверить количество пунктов", () ->
+                benderfraiPage.checkDropdownSize(TestData.INFO_SIZE)
+        );
 
-        $$(".t-menusub__menu_show .t-menusub__link-item").shouldHave(texts(
-                "О НАС",
-                "ПОКУПКА И ДОСТАВКА",
-                "КАК ПОЛЬЗОВАТЬСЯ",
-                "ГАРАНТИЯ",
-                "ЭКСПЛУАТАЦИЯ, УХОД",
-                "ОБМЕН И ВОЗВРАТ",
-                "СКИДКА ПОКУПАТЕЛЯ",
-                "КОНТАКТЫ"
-        ));
+        step("Проверить названия пунктов", () ->
+                benderfraiPage.checkDropdownTexts(TestData.INFO_ITEMS)
+        );
     }
 
     @Test
     @DisplayName("Переход на страницу товара Ошейники для кошек")
     void shouldOpenProductPageAndCheckSku() {
-        open("/cats");
+        step("Открыть страницу Коты", () ->
+                benderfraiPage.openCatsPage()
+        );
 
-        $$(".js-product").findBy(text("ОШЕЙНИКИ ДЛЯ КОШЕК")).click();
+        step("Кликнуть на товар Ошейники для кошек", () ->
+                benderfraiPage.clickProductByName(TestData.PRODUCT_OSHEINIKI)
+        );
 
-        // Проверить артикул
-        $(".t-store__prod-popup__sku").shouldHave(text("0645"));
+        step("Проверить артикул", () ->
+                benderfraiPage.checkProductSku(TestData.SKU_0645)
+        );
 
-        // Проверить цену
-        $(".t-store__prod-popup__price-value").shouldHave(text("850"));
+        step("Проверить цену", () ->
+                benderfraiPage.checkProductPrice(TestData.PRICE_850)
+        );
     }
 
     @Test
     @DisplayName("Переход на страницу товара Анатомическая шлейка для кошек")
     void shouldOpenShleikaProductPageAndCheckSku() {
-        open("/cats");
+        step("Открыть страницу Коты", () ->
+                benderfraiPage.openCatsPage()
+        );
 
-        $$(".js-product").findBy(text("Анатомическая ШЛЕЙКА ДЛЯ КОШЕК с ремнём Гудини")).click();
+        step("Кликнуть на товар Анатомическая шлейка для кошек", () ->
+                benderfraiPage.clickProductByName(TestData.PRODUCT_SHLEIKA)
+        );
 
-        // Проверить артикул
-        $(".t-store__prod-popup__sku").shouldHave(text("0645"));
+        step("Проверить артикул", () ->
+                benderfraiPage.checkProductSku(TestData.SKU_0645)
+        );
 
-        // Проверить цену
-        $(".t-store__prod-popup__price-value").shouldHave(text("3 400"));
+        step("Проверить цену", () ->
+                benderfraiPage.checkProductPrice(TestData.PRICE_3400)
+        );
     }
-
-
 }
