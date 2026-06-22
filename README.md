@@ -33,7 +33,7 @@
 </p>
 
 Тесты написаны на [Java](https://www.java.com/) с использованием [Selenide](https://selenide.org/).  
-Сборщик — [Gradle](https://gradle.org/), фреймворк модульного тестирования — [JUnit 5](https://junit.org/junit5/).    
+Сборщик — [Gradle](https://gradle.org/), фреймворк модульного тестирования — [JUnit 5](https://junit.org/junit5/).  
 Браузеры запускаются через [Selenoid](https://aerokube.com/selenoid/).  
 Удалённый запуск — [Jenkins](https://www.jenkins.io/), отчёты — [Allure Report](https://docs.qameta.io/allure/).  
 Результаты приходят в [Telegram](https://telegram.org/) через бота.  
@@ -69,7 +69,7 @@ clean test
 
 <a id="сборка-в-jenkins"></a>
 
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
+## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> <a href="https://jenkins.autotests.cloud/view/java_students/job/41-Mace133v-Unit14/">Сборка в Jenkins</a>
 
 Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code> и нажать кнопку <code>Собрать</code>.
 <p align="center">
@@ -79,7 +79,7 @@ clean test
 
 <a id="пример-allure-отчета"></a>
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример Allure-отчета
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> <a href="https://jenkins.autotests.cloud/view/java_students/job/41-Mace133v-Unit14/4/allure/">Пример Allure-отчета</a>
 ### Overview
 
 <p align="center">
@@ -88,7 +88,7 @@ clean test
 
 <a id="интеграция-с-allure-testops"></a>
 
-## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> Интеграция с Allure TestOps
+## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> <a href="https://allure.autotests.cloud/project/5254/test-cases?treeId=10276">Интеграция с Allure TestOps</a>
 
 На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты, а так же результаты прогона приходят по интеграции при каждом запуске сборки.
 
@@ -104,7 +104,7 @@ clean test
 
 <a id="интеграция-с-jira"></a>
 
-## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> Интеграция с Jira
+## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> <a href="https://jira.autotests.cloud/secure/RapidBoard.jspa?rapidView=56">Интеграция с Jira</a>
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
