@@ -15,10 +15,11 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
 
-        @BeforeEach
+    @BeforeEach
     void addListener() {
-            SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        }
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
     @BeforeAll
     static void setupSelenideConfig() {
         Configuration.browser = System.getProperty("browser", "chrome");
