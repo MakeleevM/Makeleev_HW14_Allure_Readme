@@ -1,7 +1,7 @@
 # Автоматизация тестирования сайта Benderfrai
 
 <p align="center">
-  <img src="media/logo/benderfrai-logo.svg" width="15%" alt="Benderfrai">
+  <img src="media/logo/benderfrai-logo.svg" width="550" alt="Benderfrai">
 </p>
 
 ## :scroll: Содержание:
