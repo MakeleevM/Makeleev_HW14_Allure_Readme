@@ -12,7 +12,7 @@
 - [Пример Allure-отчета](#пример-allure-отчета)
 - [Интеграция с Allure TestOps](#интеграция-с-allure-testops)
 - [Интеграция с Jira](#интеграция-с-jira)
-- [Уведомления в Telegram](#уведомления-в-telegram-с-использованием-бота)
+- [Уведомления в Telegram](#уведомления-в-telegram)
 - [Видео примера запуска тестов в Selenoid](#видео-примера-запуска-тестов-в-selenoid)
 
 ## :computer: Используемый стек
@@ -67,6 +67,7 @@ clean test
 ```
 При выполнении данной команды в терминале IDE тесты запустятся удаленно в <code>Selenoid</code>.
 
+<a id="сборка-в-jenkins"></a>
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
@@ -76,12 +77,16 @@ clean test
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
+<a id="пример-allure-отчета"></a>
+
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример Allure-отчета
 ### Overview
 
 <p align="center">
 <img title="Allure Overview" src="media/screens/allure.png">
 </p>
+
+<a id="интеграция-с-allure-testops"></a>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> Интеграция с Allure TestOps
 
@@ -97,6 +102,8 @@ clean test
 <img title="Test Results in Alure TestOps" src="media/screens/allurResults.png">
 </p>
 
+<a id="интеграция-с-jira"></a>
+
 ## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> Интеграция с Jira
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
@@ -105,6 +112,8 @@ clean test
 <img title="Jira Task" src="media/screens/Jira.png">
 </p>
 
+<a id="уведомления-в-telegram"></a>
+
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
@@ -112,6 +121,8 @@ clean test
 <p align="center">
 <img width="70%" title="Telegram Notifications" src="media/screens/Bot.png">
 </p>
+
+<a id="видео-примера-запуска-тестов-в-selenoid"></a>
 
 ### <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Видео примера запуска тестов в Selenoid
 
