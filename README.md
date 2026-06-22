@@ -32,7 +32,7 @@
 <a href="https://www.atlassian.com/software/jira"><img width="5%" title="Jira" src="media/logo/Jira.svg"></a>
 </p>
 
-Тесты написаны на **Java** с использованием [Selenide](https://selenide.org/).  
+Тесты написаны на [Java](https://www.java.com/) с использованием [Selenide](https://selenide.org/). 
 Сборщик — [Gradle](https://gradle.org/), фреймворк модульного тестирования — [JUnit 5](https://junit.org/junit5/).  
 Браузеры запускаются через [Selenoid](https://aerokube.com/selenoid/).  
 Удалённый запуск — [Jenkins](https://www.jenkins.io/), отчёты — [Allure Report](https://docs.qameta.io/allure/).  
